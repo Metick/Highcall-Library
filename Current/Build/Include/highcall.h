@@ -1214,7 +1214,7 @@ extern "C" {
 	DECL_EXTERN_API(UINT, GetSystemFirmwareTable, IN DWORD FirmwareTableProviderSignature, IN DWORD FirmwareTableID, OUT PVOID pFirmwareTableBuffer, IN DWORD BufferSize);
 
 	/* unique_id.c */
-	DECL_EXTERN_API(LPWSTR, UniqueHardwareId);
+	DECL_EXTERN_API(LPSTR, UniqueHardwareId);
 
 	/* input.c */
 	DECL_EXTERN_API(SHORT, GetAsyncKeyState, INT vKey);

@@ -3,9 +3,9 @@
 
 static CONST ULONG __cpuid_value_list[] = { 0, 7, 4, 0x80000008, 0x80000007, 0x80000005, 0x80000006, 0x80000001, 0x80000000 };
 
-DECL_EXTERN_API(LPWSTR, UniqueHardwareId)
+DECL_EXTERN_API(LPSTR, UniqueHardwareId)
 {
-	LPSTR lpCpuID = HcStringAllocW(256);
+	LPSTR lpCpuID = HcStringAllocA(256);
 	ULONG dIndex = 0;
 
 	for (ULONG i = 0; i < __crt_countof(__cpuid_value_list); i++)
@@ -30,7 +30,7 @@ DECL_EXTERN_API(LPWSTR, UniqueHardwareId)
 	HcStringAppendExA(saltedSerialNumber, lpCpuID);
 
 	// SHA256(HDDSERIAL+CPUID)
-	LPWSTR lpDataHashed = HcHashSha256W(saltedSerialNumber, 255);
+	LPSTR lpDataHashed = HcHashSha256A(saltedSerialNumber, 255);
 
 	HcFree(lpCpuID);
 	return lpDataHashed;

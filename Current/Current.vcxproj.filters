@@ -90,6 +90,8 @@
     <ClCompile Include="private\user\class.c" />
     <ClCompile Include="private\user\window.c" />
     <ClCompile Include="private\user\draw.c" />
+    <ClCompile Include="private\kernel\drive.c" />
+    <ClCompile Include="private\kernel\firmware.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="private\distorm\src\config.h">

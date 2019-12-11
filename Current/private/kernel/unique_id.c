@@ -5,7 +5,7 @@ static CONST ULONG __cpuid_value_list[] = { 0, 7, 4, 0x80000008, 0x80000007, 0x8
 
 DECL_EXTERN_API(LPWSTR, UniqueHardwareId)
 {
-	LPWSTR lpCpuID = HcStringAllocW(256);
+	LPSTR lpCpuID = HcStringAllocW(256);
 	ULONG dIndex = 0;
 
 	for (ULONG i = 0; i < __crt_countof(__cpuid_value_list); i++)
@@ -17,12 +17,20 @@ DECL_EXTERN_API(LPWSTR, UniqueHardwareId)
 
 		for (DWORD block = 0; block < 16; block++)
 		{
-			HcStringUInt32ToHexStringW((ULONG) blockInfo[block], &lpCpuID[dIndex]);
+			HcStringUInt32ToHexStringA((ULONG) blockInfo[block], &lpCpuID[dIndex]);
 			dIndex += 1;
 		}
 	}
 
-	LPWSTR lpDataHashed = HcHashSha256W(lpCpuID, 255);
+	CHAR serialNumber[256];
+	HcDriveGetSerialNumber(0, serialNumber);
+
+	CHAR saltedSerialNumber[512];
+	HcStringAppendExA(saltedSerialNumber, serialNumber);
+	HcStringAppendExA(saltedSerialNumber, lpCpuID);
+
+	// SHA256(HDDSERIAL+CPUID)
+	LPWSTR lpDataHashed = HcHashSha256W(saltedSerialNumber, 255);
 
 	HcFree(lpCpuID);
 	return lpDataHashed;

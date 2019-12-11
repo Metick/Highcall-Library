@@ -39,6 +39,7 @@ DECL_EXTERN_API(LPVOID, VirtualAllocEx,
 	}
 	else
 	{
+		
 		/* Allocate the memory */
 		Status = HcAllocateVirtualMemory(hProcess,
 			&lpAddress,

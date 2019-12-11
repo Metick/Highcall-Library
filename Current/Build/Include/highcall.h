@@ -1206,6 +1206,13 @@ extern "C" {
 	DECL_EXTERN_API(VOID, HashSha256Update, SHA_256 *ctx, CONST LPBYTE data, SIZE_T len);
 	DECL_EXTERN_API(VOID, HashSha256Final, SHA_256 *ctx, LPBYTE hash);
 
+	/* drive.c */
+	DECL_EXTERN_API(DWORD, DriveGetSerialNumber, UINT DriveNumber, LPSTR SerialNumber);
+
+	/* firmware.c */
+	DECL_EXTERN_API(UINT, EnumSystemFirmwareTables, IN DWORD FirmwareTableProviderSignature, OUT PVOID pFirmwareTableBuffer, IN DWORD BufferSize);
+	DECL_EXTERN_API(UINT, GetSystemFirmwareTable, IN DWORD FirmwareTableProviderSignature, IN DWORD FirmwareTableID, OUT PVOID pFirmwareTableBuffer, IN DWORD BufferSize);
+
 	/* unique_id.c */
 	DECL_EXTERN_API(LPWSTR, UniqueHardwareId);
 

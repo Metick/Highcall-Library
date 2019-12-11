@@ -434,20 +434,6 @@ CONST BYTE payload32[] =
 // put both functions in the same section.  as long as there are only two, they should be in order
 #pragma code_seg( ".text$A" )
 
-static __inline size_t __mbstowcs(register wchar_t *pwcs, register const char *s, int n)
-{
-	register int i = n;
-
-	while (--i >= 0)
-	{
-		if (!(*pwcs++ = *s++))
-		{
-			return n - i - 1;
-		}
-	}
-	return n - i;
-}
-
 static __inline size_t __str_size(register const char *s)
 {
 	size_t ret = 0;

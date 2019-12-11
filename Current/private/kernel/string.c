@@ -11,7 +11,6 @@ LPWSTR Directory = HcStringAllocW(MAX_PATH);
 HcInternalCopy(Directory, KritikaMainModule.Path, Delta);
 
 HcFree(Directory);
-
 */
 
 DECL_EXTERN_API(VOID, InitUnicodeString, PUNICODE_STRING DestinationString, PCWSTR SourceString)

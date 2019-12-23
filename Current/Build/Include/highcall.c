@@ -95,37 +95,46 @@ static NTSTATUS INITIALIZATION_ROUTINE InitializeVersion(VOID)
 	/* Windows 10 */
 	else if (majorVersion == 10 && minorVersion == 0)
 	{
-		if (buildNumber >= 17134)
+		if (buildNumber == 18363)
+		{
+			HcGlobal.WindowsVersion = WINDOWS_10_1909;
+		}
+		else if (buildNumber == 18362)
+		{
+			HcGlobal.WindowsVersion = WINDOWS_10_1903;
+		}
+		else if (buildNumber == 17763)
+		{
+			HcGlobal.WindowsVersion = WINDOWS_10_1809;
+		}
+		else if (buildNumber == 17134)
 		{
 			HcGlobal.WindowsVersion = WINDOWS_10_1803;
-		}
-		else if (buildNumber > 16299)
-		{
-			HcGlobal.WindowsVersion = WINDOWS_10_1713;
 		}
 		else if (buildNumber == 16299)
 		{
 			HcGlobal.WindowsVersion = WINDOWS_10_1709;
 		}
-		else if (buildNumber >= 15063)
+		else if (buildNumber == 15063)
 		{
 			HcGlobal.WindowsVersion = WINDOWS_10_1703;
 		}
-		else if (buildNumber >= 14393)
+		else if (buildNumber == 14393)
 		{
 			HcGlobal.WindowsVersion = WINDOWS_10_1607;
 		}
-		else if (buildNumber >= 10586)
+		else if (buildNumber == 10586)
 		{
 			HcGlobal.WindowsVersion = WINDOWS_10_1511;
 		}
-		else if (buildNumber >= 10240)
+		else if (buildNumber == 10240)
 		{
 			HcGlobal.WindowsVersion = WINDOWS_10_1507;
 		}
 		else
 		{
 			HcGlobal.WindowsVersion = WINDOWS_NOT_SUPPORTED;
+			Status = STATUS_INVALID_OWNER;
 		}
 	}
 	else

@@ -75,6 +75,7 @@ typedef long SYS_INDEX;
 //
 // Windows version defines for initialization routines.
 //
+
 #define WINDOWS_7				0 
 #define WINDOWS_7_1				1
 #define WINDOWS_8				2
@@ -84,8 +85,10 @@ typedef long SYS_INDEX;
 #define WINDOWS_10_1607			6
 #define WINDOWS_10_1703			7
 #define WINDOWS_10_1709			8
-#define WINDOWS_10_1713			9
-#define WINDOWS_10_1803			10
+#define WINDOWS_10_1803			9
+#define WINDOWS_10_1809			10
+#define WINDOWS_10_1903			11
+#define WINDOWS_10_1909			12
 #define WINDOWS_NOT_SUPPORTED	0
 #define WINDOWS_NOT_DEFINED	   -1
 #pragma endregion

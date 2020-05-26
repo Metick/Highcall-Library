@@ -739,7 +739,7 @@ extern "C" {
 
 	/* defined in inject.c */
 	DECL_EXTERN_API(BOOLEAN, InjectManualMap32W, CONST IN HANDLE hProcess, IN LPCWSTR szcPath);
-	DECL_EXTERN_API(ULONG64 , InjectRemoteThreadLdr64W, CONST IN HANDLE hProcess, IN LPCWSTR szcPath);
+	DECL_EXTERN_API(ULONG64, InjectRemoteThreadLdr64W, CONST IN HANDLE hProcess, IN LPCWSTR szcPath);
 	DECL_EXTERN_API(ULONG, InjectRemoteThreadLdr32W, CONST IN HANDLE hProcess, IN LPCWSTR szcPath);
 	DECL_EXTERN_API(BOOLEAN, InjectRemoteThread64W, CONST IN HANDLE hProcess, IN LPCWSTR szcPath);
 	DECL_EXTERN_API(BOOLEAN, InjectRemoteThread32W, CONST IN HANDLE hProcess, IN LPCWSTR szcPath);

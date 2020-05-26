@@ -95,7 +95,11 @@ static NTSTATUS INITIALIZATION_ROUTINE InitializeVersion(VOID)
 	/* Windows 10 */
 	else if (majorVersion == 10 && minorVersion == 0)
 	{
-		if (buildNumber == 18363)
+		if (buildNumber == 19041)
+		{
+			HcGlobal.WindowsVersion = WINDOWS_10_2004;
+		}
+		else if (buildNumber == 18363)
 		{
 			HcGlobal.WindowsVersion = WINDOWS_10_1909;
 		}

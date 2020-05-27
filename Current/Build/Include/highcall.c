@@ -689,7 +689,7 @@ static NTSTATUS InitializeSyscall(VOID)
 	sciGdiCombineTransform = sciTable_86_64_NtGdiCombineTransform[v];
 	sciGdiComputeXformCoefficients = sciTable_86_64_NtGdiComputeXformCoefficients[v];
 	sciGdiConfigureOPMProtectedOutput = sciTable_86_64_NtGdiConfigureOPMProtectedOutput[v];
-	sciGdiConsoleTextOut = sciTable_86_64_NtGdiConsoleTextOut[v];
+	//sciGdiConsoleTextOut = sciTable_86_64_NtGdiConsoleTextOut[v];
 	sciGdiConvertMetafileRect = sciTable_86_64_NtGdiConvertMetafileRect[v];
 	sciGdiCreateBitmap = sciTable_86_64_NtGdiCreateBitmap[v];
 	sciGdiCreateBitmapFromDxSurface = sciTable_86_64_NtGdiCreateBitmapFromDxSurface[v];
@@ -1004,8 +1004,8 @@ static NTSTATUS InitializeSyscall(VOID)
 	sciGdiDvpUpdateVideoPort = sciTable_86_64_NtGdiDvpUpdateVideoPort[v];
 	sciGdiDvpWaitForVideoPortSync = sciTable_86_64_NtGdiDvpWaitForVideoPortSync[v];
 	sciGdiDwmCreatedBitmapRemotingOutput = sciTable_86_64_NtGdiDwmCreatedBitmapRemotingOutput[v];
-	sciGdiDwmGetDirtyRgn = sciTable_86_64_NtGdiDwmGetDirtyRgn[v];
-	sciGdiDwmGetSurfaceData = sciTable_86_64_NtGdiDwmGetSurfaceData[v];
+	//sciGdiDwmGetDirtyRgn = sciTable_86_64_NtGdiDwmGetDirtyRgn[v];
+	//sciGdiDwmGetSurfaceData = sciTable_86_64_NtGdiDwmGetSurfaceData[v];
 	sciGdiDxgGenericThunk = sciTable_86_64_NtGdiDxgGenericThunk[v];
 	sciGdiEllipse = sciTable_86_64_NtGdiEllipse[v];
 	sciGdiEnableEudc = sciTable_86_64_NtGdiEnableEudc[v];
@@ -1044,9 +1044,9 @@ static NTSTATUS InitializeSyscall(VOID)
 	sciGdiEngTransparentBlt = sciTable_86_64_NtGdiEngTransparentBlt[v];
 	sciGdiEngUnlockSurface = sciTable_86_64_NtGdiEngUnlockSurface[v];
 	sciGdiEnsureDpiDepDefaultGuiFontForPlateau = sciTable_86_64_NtGdiEnsureDpiDepDefaultGuiFontForPlateau[v];
-	sciGdiEnumFontChunk = sciTable_86_64_NtGdiEnumFontChunk[v];
-	sciGdiEnumFontClose = sciTable_86_64_NtGdiEnumFontClose[v];
-	sciGdiEnumFontOpen = sciTable_86_64_NtGdiEnumFontOpen[v];
+	//sciGdiEnumFontChunk = sciTable_86_64_NtGdiEnumFontChunk[v];
+	//sciGdiEnumFontClose = sciTable_86_64_NtGdiEnumFontClose[v];
+	//sciGdiEnumFontOpen = sciTable_86_64_NtGdiEnumFontOpen[v];
 	sciGdiEnumFonts = sciTable_86_64_NtGdiEnumFonts[v];
 	sciGdiEnumObjects = sciTable_86_64_NtGdiEnumObjects[v];
 	sciGdiEqualRgn = sciTable_86_64_NtGdiEqualRgn[v];
@@ -1253,7 +1253,7 @@ static NTSTATUS InitializeSyscall(VOID)
 	sciGdiSetTextJustification = sciTable_86_64_NtGdiSetTextJustification[v];
 	sciGdiSetUMPDSandboxState = sciTable_86_64_NtGdiSetUMPDSandboxState[v];
 	sciGdiSetVirtualResolution = sciTable_86_64_NtGdiSetVirtualResolution[v];
-	sciGdiSetupPublicCFONT = sciTable_86_64_NtGdiSetupPublicCFONT[v];
+	//sciGdiSetupPublicCFONT = sciTable_86_64_NtGdiSetupPublicCFONT[v];
 	sciGdiSfmGetNotificationTokens = sciTable_86_64_NtGdiSfmGetNotificationTokens[v];
 	sciGdiStartDoc = sciTable_86_64_NtGdiStartDoc[v];
 	sciGdiStartPage = sciTable_86_64_NtGdiStartPage[v];

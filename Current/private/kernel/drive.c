@@ -151,7 +151,7 @@ DECL_EXTERN_API(DWORD, DriveGetSerialNumber, UINT DriveNumber, LPSTR SerialNumbe
 
 	STORAGE_DESCRIPTOR_HEADER StorageDescriptorHeader = { 0 };
 
-	DWORD BytesReturned = 0;
+	ULONG_PTR BytesReturned = 0;
 	if (!HcDeviceIoControl(DeviceHandle, IOCTL_STORAGE_QUERY_PROPERTY,
 		&StoragePropertyQuery, sizeof(STORAGE_PROPERTY_QUERY),
 		&StorageDescriptorHeader, sizeof(STORAGE_DESCRIPTOR_HEADER),

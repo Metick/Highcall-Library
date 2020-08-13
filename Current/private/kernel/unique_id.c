@@ -28,9 +28,9 @@ DECL_EXTERN_API(LPSTR, UniqueHardwareId)
 	CHAR saltedSerialNumber[512];
 	HcStringAppendExA(saltedSerialNumber, serialNumber);
 	HcStringAppendExA(saltedSerialNumber, lpCpuID);
-
+	
 	// SHA256(HDDSERIAL+CPUID)
-	LPSTR lpDataHashed = HcHashSha256A(saltedSerialNumber, 255);
+	LPSTR lpDataHashed = HcHashSha256A(saltedSerialNumber, HcStringLenA(saltedSerialNumber));
 
 	HcFree(lpCpuID);
 	return lpDataHashed;

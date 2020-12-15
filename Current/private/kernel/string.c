@@ -27,6 +27,31 @@ DECL_EXTERN_API(VOID, InitUnicodeString, PUNICODE_STRING DestinationString, PCWS
 	DestinationString->MaximumLength = (USHORT) len * 2 + 2;
 }
 
+DECL_EXTERN_API (VOID, CopyUnicodeString, IN OUT PUNICODE_STRING DestinationString, IN PCUNICODE_STRING SourceString)
+{
+	ULONG SourceLength;
+
+	if (SourceString == NULL)
+	{
+		DestinationString->Length = 0;
+	}
+	else
+	{
+		SourceLength = min(DestinationString->MaximumLength,
+			SourceString->Length);
+		DestinationString->Length = (USHORT)SourceLength;
+
+		HcInternalCopy(DestinationString->Buffer,
+			SourceString->Buffer,
+			SourceLength);
+
+		if (DestinationString->Length < DestinationString->MaximumLength)
+		{
+			DestinationString->Buffer[SourceLength / sizeof(WCHAR)] = UNICODE_NULL;
+		}
+	}
+}
+
 DECL_EXTERN_API(LPSTR, StringAllocA, CONST IN DWORD tSize)
 {
 	return (LPSTR) HcAlloc(tSize * sizeof(CHAR) + sizeof(ANSI_NULL));

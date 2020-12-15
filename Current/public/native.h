@@ -289,6 +289,8 @@ typedef struct _UNICODE_STRING
 	PWSTR  Buffer;
 } UNICODE_STRING, *PUNICODE_STRING;
 
+typedef const UNICODE_STRING* PCUNICODE_STRING;
+
 typedef struct _STRING
 {
 	USHORT Length;

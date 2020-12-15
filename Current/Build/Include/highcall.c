@@ -95,7 +95,11 @@ static NTSTATUS INITIALIZATION_ROUTINE InitializeVersion(VOID)
 	/* Windows 10 */
 	else if (majorVersion == 10 && minorVersion == 0)
 	{
-		if (buildNumber == 19041)
+                if (buildNumber == 19042)
+                {
+                	HcGlobal.WindowsVersion = WINDOWS_10_20H2;
+                }
+		else if (buildNumber == 19041)
 		{
 			HcGlobal.WindowsVersion = WINDOWS_10_2004;
 		}
@@ -1346,6 +1350,8 @@ static NTSTATUS InitializeSyscall(VOID)
 	sciTokenManagerThread = sciTable_86_64_NtTokenManagerThread[v];
 	sciUnBindCompositionSurface = sciTable_86_64_NtUnBindCompositionSurface[v];
 	sciUpdateInputSinkTransforms = sciTable_86_64_NtUpdateInputSinkTransforms[v];
+
+	sciUserSendInput = sciTable_86_64_NtUserSendInput[v];
 	/*sciUserAcquireIAMKey = sciTable_86_64_NtUserAcquireIAMKey[v];
 	sciUserAcquireInteractiveControlBackgroundAccess = sciTable_86_64_NtUserAcquireInteractiveControlBackgroundAccess[v];
 	sciUserActivateKeyboardLayout = sciTable_86_64_NtUserActivateKeyboardLayout[v];
@@ -1732,7 +1738,6 @@ static NTSTATUS InitializeSyscall(VOID)
 	sciUserScrollWindowEx = sciTable_86_64_NtUserScrollWindowEx[v];
 	sciUserSelectPalette = sciTable_86_64_NtUserSelectPalette[v];
 	sciUserSendEventMessage = sciTable_86_64_NtUserSendEventMessage[v];
-	sciUserSendInput = sciTable_86_64_NtUserSendInput[v];
 	sciUserSendInteractiveControlHapticsReport = sciTable_86_64_NtUserSendInteractiveControlHapticsReport[v];
 	sciUserSendTouchInput = sciTable_86_64_NtUserSendTouchInput[v];
 	sciUserSetActivationFilter = sciTable_86_64_NtUserSetActivationFilter[v];
@@ -3509,6 +3514,8 @@ static NTSTATUS InitializeSyscall(VOID)
 		sciTokenManagerThread = sciTable_86_64_NtTokenManagerThread[v];
 		sciUnBindCompositionSurface = sciTable_86_64_NtUnBindCompositionSurface[v];
 		sciUpdateInputSinkTransforms = sciTable_86_64_NtUpdateInputSinkTransforms[v];
+
+		sciUserSendInput = sciTable_86_64_NtUserSendInput[v];
 		/*sciUserAcquireIAMKey = sciTable_86_64_NtUserAcquireIAMKey[v];
 		sciUserAcquireInteractiveControlBackgroundAccess = sciTable_86_64_NtUserAcquireInteractiveControlBackgroundAccess[v];
 		sciUserActivateKeyboardLayout = sciTable_86_64_NtUserActivateKeyboardLayout[v];
@@ -3895,7 +3902,6 @@ static NTSTATUS InitializeSyscall(VOID)
 		sciUserScrollWindowEx = sciTable_86_64_NtUserScrollWindowEx[v];
 		sciUserSelectPalette = sciTable_86_64_NtUserSelectPalette[v];
 		sciUserSendEventMessage = sciTable_86_64_NtUserSendEventMessage[v];
-		sciUserSendInput = sciTable_86_64_NtUserSendInput[v];
 		sciUserSendInteractiveControlHapticsReport = sciTable_86_64_NtUserSendInteractiveControlHapticsReport[v];
 		sciUserSendTouchInput = sciTable_86_64_NtUserSendTouchInput[v];
 		sciUserSetActivationFilter = sciTable_86_64_NtUserSetActivationFilter[v];
@@ -4849,7 +4855,8 @@ static NTSTATUS InitializeSyscall(VOID)
 		sciUserAcquireInteractiveControlBackgroundAccess = sciTable_86_NtUserAcquireInteractiveControlBackgroundAccess[v];
 		sciUserActivateKeyboardLayout = sciTable_86_NtUserActivateKeyboardLayout[v];
 		sciUserAddClipboardFormatListener = sciTable_86_NtUserAddClipboardFormatListener[v];
-		sciUserAlterWindowStyle = sciTable_86_NtUserAlterWindowStyle[v];/*
+		sciUserAlterWindowStyle = sciTable_86_NtUserAlterWindowStyle[v];
+		sciUserSendInput = sciTable_86_NtUserSendInput[v];/*
 		sciUserAssociateInputContext = sciTable_86_NtUserAssociateInputContext[v];
 		sciUserAttachThreadInput = sciTable_86_NtUserAttachThreadInput[v];
 		sciUserAutoPromoteMouseInPointer = sciTable_86_NtUserAutoPromoteMouseInPointer[v];
@@ -5231,7 +5238,6 @@ static NTSTATUS InitializeSyscall(VOID)
 		sciUserScrollWindowEx = sciTable_86_NtUserScrollWindowEx[v];
 		sciUserSelectPalette = sciTable_86_NtUserSelectPalette[v];
 		sciUserSendEventMessage = sciTable_86_NtUserSendEventMessage[v];
-		sciUserSendInput = sciTable_86_NtUserSendInput[v];
 		sciUserSendInteractiveControlHapticsReport = sciTable_86_NtUserSendInteractiveControlHapticsReport[v];
 		sciUserSendTouchInput = sciTable_86_NtUserSendTouchInput[v];
 		sciUserSetActivationFilter = sciTable_86_NtUserSetActivationFilter[v];

@@ -1255,6 +1255,7 @@ extern "C" {
 	DECL_EXTERN_API(INT, GetClassNameW, HWND hWnd, LPWSTR lpClassName, int nMaxCount);
 
 	DECL_EXTERN_API(VOID, InitUnicodeString, PUNICODE_STRING DestinationString, PCWSTR SourceString);
+	DECL_EXTERN_API(VOID, CopyUnicodeString, IN OUT PUNICODE_STRING DestinationString, IN PCUNICODE_STRING SourceString);
 	BOOLEAN NTAPI HcDosPathNameToNtPathName_U(IN PCWSTR 	DosName,
 		OUT PUNICODE_STRING 	NtName,
 		OUT PCWSTR * 	PartName,
